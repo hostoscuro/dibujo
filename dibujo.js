@@ -1,4 +1,14 @@
 
+//hello = () => {
+//   return "Hello World!";
+// }
+
+inventario=false
+recoger="si"
+moverte=false
+lugar="zona00"
+
+
 var dibujo1 = {
         1:"░░░░░░░░░░░▄▄▀▀▀▀▀▀▀▀▄▄",
         2:"░░░░░░░░▄▀▀░░░░░░░░░░░░▀▄▄",
@@ -46,39 +56,149 @@ var dibujo1 = {
             20:"░░░░░▐▒▐░▐▐░▌▒▒▒▒▀▀▄▀▌▐░░▌▒░▌",
             21:"░░░░░▌▒▒▌▐▒▌▒▒▒▒▒▒▒▒▐▀▄▌░▐▒▒",
         }
+
+
+        var espada1 = {
+            atk:100,
+            dure:4,
+
+        }
+
+        var espada2 = {
+         atk:100,
+         dure:1,
+     }
+
+         var zona1={
+            1:"nose",
+         }
+
+         var zona2={
+            1:"nose",
+         }
+
+         const caminar=(lugar)=>{
+            
+                
+
+         }
         
+          const recojeritem=()=>{
+            
+            if(recoger=="si"){
+                inventario=true
+            }
+
+          }
+           
+          const radarzona =() =>{
+               
+
+
+          }
+
+          const espada=()=>{
+
+
+         }
+
+
          linea=0
          dibuj=1
-         dibujito()
-          function dibujito(){
-        
-             
-             setInterval(function(){ 
-                
-                linea=linea + 1
-        
-             if(linea <=21 &&dibuj==1){
-                  console.log(dibujo1[linea])
-                }
-        
-               if(linea==21&&dibuj==1){
-                  linea=0
-                  dibuj=0
-                 }
-        
-        
-             if(linea<=21&&dibuj==0){
-              console.log(dibujo2[linea])
+         conteo=0
+         intro=false
+        // intro1=0
+         //dibujito()  
+         //console.log("code") 
+
+         const dibujando =()=>{
+            linea=linea + 1
+            //conteo= conteo +1
+            //console.log(conteo)
+            //console.log(intro)
+            if(conteo==4){
+               intro=true
+               clearInterval(imprimir)
+              // console.log(conteo)
+              // console.log(intro)
+               introducion()
               }
+    
+         if(linea <=21 &&dibuj==1){
+              console.log(dibujo1[linea])
+            }
+    
+           if(linea==21&&dibuj==1){
+              linea=0
+              dibuj=0
+              conteo=conteo+1
+             }
+    
+    
+         if(linea<=21&&dibuj==0){
+          console.log(dibujo2[linea])
+          }
+    
+            if(linea==21){
+              linea=0
+              dibuj=1
+              conteo=conteo+1
+            
+            }
+
+         }
+         
+         function dibujito(){
+                  
+            imprimir=setInterval(dibujando,100)
+            
+                    
+       }
+         
+               dibujito()
+
+         const introducion =()=> {
+                  
+                if(intro==true){
+                  console.log("de pronto ves una cueva tenebrosa deseas moverte a la cueva? si ho no?")
+                  var contestacion = prompt('ehh? dime:?', 'Tengo miedo');
+
+                  if(contestacion=="si"){
+                     lugar=="zona1"
+                  }else if(contestacion=="no"){
+
+                  }else if(contestacion=="tengo miedo"){
+
+                  }else{
+                     console.log("no te entiendo") 
+                  }
+
+                  if(lugar=="zona00"){
+
+                  }else if(lugar=="zona1"){
+
+                  }else if(lugar=="zona2"){
+
+                  }
+
+                  if(moverte==true){
+                      
+                     radarzona()
+
+                  }
+
+
+                 
+                }else{
+                 // clearInterval(imprimir)
+                  console.log("entro2")
+                }   
+                          
+         }
+          
         
-                if(linea==21){
-                   linea=0
-                  dibuj=1
-        
-                }
-        
-                }, 200);
-        
-        
-        }
+
+         
+
+          
         
