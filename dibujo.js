@@ -7,6 +7,8 @@ inventario=false
 recoger="si"
 moverte=false
 lugar="zona00"
+len=0
+aleat=0
 
 
 var dibujo1 = {
@@ -68,14 +70,42 @@ var dibujo1 = {
          atk:100,
          dure:1,
      }
+     
+     var zona00={
+      
+   }
 
          var zona1={
             1:"nose",
+
          }
 
          var zona2={
             1:"nose",
+            2:"nose",
+            3:"nose",
          }
+
+         var zona3={
+            1:"nose",
+            2:"nose",
+         }
+
+         var zona4={
+            1:"nose",
+            2:"nose",
+            3:"nose",
+            4:"nose",
+         }
+
+         var zona5={
+            1:"nose",
+            2:"nose",
+            3:"nose",
+            4:"nose",
+            5:"nose",
+         }
+
 
          const caminar=(lugar)=>{
             
@@ -150,21 +180,55 @@ var dibujo1 = {
          
          function dibujito(){
                   
-            imprimir=setInterval(dibujando,100)
+            imprimir=setInterval(dibujando,10)
             
                     
        }
          
                dibujito()
+                
+           const aleatorio=()=>{
+
+             aleat = Math.floor(Math.random() * (5 - 2) ) + 1;
+            console.log(aleat)
+           }
+
+          const cardinal=()=>{
+              
+             len = Object.keys([lugar]).length
+               console.log("en este lugar hay " + len + " item")
+              // console.log(len)
+               //console.log("items") 
+               
+               if(len=>0){
+                  console.log("deseas recojer?")
+                  var contestacion2 = prompt('ehh? dime:?', 'no');
+               }
+               if(contestacion2=="si"){
+                  console.log("asdasdr?")
+
+               }
+               if(contestacion2=="no"){
+                  console.log("haber que hay por aca")
+                  aleatorio()
+                  lugar="zona"+[aleat]
+                  console.log(lugar)
+                  cardinal()
+               }
+
+          }
 
          const introducion =()=> {
                   
                 if(intro==true){
                   console.log("de pronto ves una cueva tenebrosa deseas moverte a la cueva? si ho no?")
+                  
+                  console.log(len)
                   var contestacion = prompt('ehh? dime:?', 'Tengo miedo');
 
                   if(contestacion=="si"){
                      lugar=="zona1"
+                     cardinal()
                   }else if(contestacion=="no"){
 
                   }else if(contestacion=="tengo miedo"){
