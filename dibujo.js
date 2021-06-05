@@ -1,7 +1,5 @@
 
-//hello = () => {
-//   return "Hello World!";
-// }
+
 
 inventario=false
 recoger="si"
