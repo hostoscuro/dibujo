@@ -52,7 +52,7 @@ var dibujo1 = {
          dibujito()
           function dibujito(){
         
-             linea
+             
              setInterval(function(){ 
                 
                 linea=linea + 1
